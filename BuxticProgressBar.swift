@@ -110,23 +110,18 @@ class BuxticProgressBar: UIView {
         layer.masksToBounds = true
         layer.borderWidth = 0.0
         
-        gradient.colors = [trackGradientEndColor.cgColor, trackGradientStartColor.cgColor]
         gradient.startPoint = CGPoint(x: 1, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)
         layer.addSublayer(gradient)
 
-        gradientBlur.opacity = Float(self.backOpacity)
-        gradientBlur.colors = [blurEndGradientColor.cgColor, blurStartGradientColor.cgColor]
         gradientBlur.startPoint = CGPoint(x: 1, y: 0)
         gradientBlur.endPoint = CGPoint(x: 0, y: 1)
         layer.addSublayer(gradientBlur)
         
-        backgroundMask.lineWidth = trackerWidth
         backgroundMask.fillColor = nil
         backgroundMask.strokeColor = UIColor.black.cgColor
         gradient.mask = backgroundMask
 
-        progressLayer.lineWidth = trackBackgroundWidth
         progressLayer.fillColor = nil
         layer.addSublayer(progressLayer)
         layer.transform = CATransform3DMakeRotation(CGFloat(90 * Double.pi / 180), 0, 0, -1)
@@ -151,10 +146,15 @@ class BuxticProgressBar: UIView {
     func drawBackground(_ rect: CGRect) {
         gradient.frame = self.bounds
         gradientBlur.frame = self.bounds
+        gradient.colors = [trackGradientEndColor.cgColor, trackGradientStartColor.cgColor]
+        gradientBlur.colors = [blurEndGradientColor.cgColor, blurStartGradientColor.cgColor]
+        gradientBlur.opacity = Float(self.backOpacity)
     }
     
     // MARK: - Progress circle
     func drawProgressCircle(_ rect: CGRect) {
+        backgroundMask.lineWidth = trackerWidth
+        progressLayer.lineWidth = trackBackgroundWidth
         let trackerRect = CGRect(x: rect.origin.x + self.trackPadding,
                                  y: rect.origin.y + self.trackPadding,
                                  width: rect.width - 2 * trackPadding,
