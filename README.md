@@ -6,7 +6,7 @@ Circular Progress Bar - with gradient coloring and auto-layouting support
 Implements circular progress bar with gradient coloring  
    - Background blur with given gradient colors  
    - Progress tracker with gradient colors  
-   - Variod ways of customization of colors and sizes  
+   - Various ways of customizations of colors and sizes  
 
 ---  
 #### How to use
