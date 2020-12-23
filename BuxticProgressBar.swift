@@ -13,7 +13,6 @@
 import Foundation
 import UIKit
 
-@IBDesignable
 class BuxticProgressBar: UIView {
     
     // MARK: - Progress displayed on circle and central label
