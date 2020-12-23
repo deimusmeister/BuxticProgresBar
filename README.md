@@ -1,7 +1,7 @@
 # BuxticProgresBar
 Circular Progress Bar - with gradient coloring and auto-layouting support
-
-![Screenshot](https://raw.githubusercontent.com/deimusmeister/BuxticProgresBar/blob/main/full-preview.png)
+- Preview 
+![Preview](https://raw.githubusercontent.com/deimusmeister/BuxticProgresBar/master/full-preview.png)
 
 Implements circular progress bar with gradient coloring  
    - Background blur with given gradient colors  
